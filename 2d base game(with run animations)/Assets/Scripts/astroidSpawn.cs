@@ -25,10 +25,14 @@ public class astroidSpawn : MonoBehaviour
             lastSpawnTimeS = Time.time;
             GameObject spawned = Instantiate(spawnedPrefab, Vector3.zero, Quaternion.identity) as GameObject;
             spawned.transform.parent = transform;
+            float x = spawnArea.offset.x;
+            float y = spawnArea.offset.y;
+            float w = spawnArea.size.x / 2;
+            float h = spawnArea.size.y / 2;
             Vector3 pos = new Vector3(
-                 Random.Range(spawnArea.offset.x, spawnArea.offset.x + spawnArea.size.x),
-                 Random.Range(spawnArea.offset.y, spawnArea.offset.y + spawnArea.size.y),
-                 0);
+                Random.Range(x - w / 2, x + w / 2),
+                Random.Range(y - h / 2, y + h / 2),
+                0);
             spawned.transform.localPosition = pos;
         }
         else if (lastSpawnTimeS >= 0 && Time.time - lastSpawnTimeS > spawnDelayS)
