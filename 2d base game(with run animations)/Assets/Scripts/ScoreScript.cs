@@ -26,9 +26,9 @@ public class ScoreScript : MonoBehaviour
         {
             nextActionTime += period;
             ScoreScript.scoreValue += 1;
-            oxygen.GetComponent<Oxygen>().LooseOxygen(Oxygendamage);
             hydrogen.GetComponent<Hydrogen>().LooseHydrogen(Hydrodamage);
-            
+            oxygen.GetComponent<Oxygen>().LooseOxygen(Oxygendamage);
+
         }
         
         score.text = "Day " + scoreValue;
