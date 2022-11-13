@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class astroidSpawn : MonoBehaviour
 {
     public GameObject spawnedPrefab;
     public BoxCollider2D spawnArea;
 
+
     float lastSpawnTimeS = -1;
     public float spawnDelayS = 3;
+
 
     // Use this for initialization
     void Start()
@@ -39,5 +42,11 @@ public class astroidSpawn : MonoBehaviour
         {
             lastSpawnTimeS = -1;
         }
+
+
+
     }
+
+
+
 }

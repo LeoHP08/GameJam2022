@@ -17,7 +17,7 @@ public class bg : MonoBehaviour
 
         if (transform.position.y > 15.82)
         {
-            transform.position = transform.position + new Vector3(transform.position.x, 27.2f);
+            transform.position = new Vector3(transform.position.x, -26f);
         }
     }
 }
