@@ -15,10 +15,12 @@ public class ScoreScript : MonoBehaviour
     public float Oxygendamage = 1f;
     public Hydrogen hydrogen;
     public Oxygen oxygen;
+    public TMP_Text WinText;
 
     void Start()
     {
         score = GetComponent<TMP_Text>();
+        WinText.enabled = false;
     }
     void Update()
     {
@@ -29,9 +31,16 @@ public class ScoreScript : MonoBehaviour
             hydrogen.GetComponent<Hydrogen>().LooseHydrogen(Hydrodamage);
             oxygen.GetComponent<Oxygen>().LooseOxygen(Oxygendamage);
 
+
         }
         
         score.text = "Day " + scoreValue;
+
+        if(scoreValue == 5)
+        {
+            WinText.enabled = true;
+        }
+
 
     }
 
