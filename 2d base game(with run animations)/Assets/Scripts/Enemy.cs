@@ -11,7 +11,16 @@ public class Enemy : MonoBehaviour
         if (collision.tag == "Player")
         {
             collision.GetComponent<Health>().TakeDamage(damage);
-        }
 
+        }
+           
+        
+    }
+    private void Update()
+    {
+        if (transform.position.y > 10)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
